@@ -42,5 +42,5 @@ When you need to work on a different computer for the existed repository on the 
 2. Add the remote repository `git remote add origin http://github.com/xuejiao-li/test.git` the origin is a standard convention used for the URL of your repository. 
 3. Pull the repository to your local machine by using `git pull origin master` to pull the remote repository to your local master branch. 
 
-**NOTE: After the first time when you push and pull, you are able to simply use `git push` and `git pull` without `origin master` 
+**NOTE: After the first time when you push and pull, you are able to simply use `git push` and `git pull` without `origin master`**
 
