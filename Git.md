@@ -32,6 +32,9 @@ $ git commit
 $ git remote add origin https://github.com/xuejiao-li/test.git
 $ git push -u origin master
 
+$ git clone https://github.com/xuejiao-li/Hands-On-Data-Analysis-with-Pandas.git . 
+(clone or copy a repository to your current working directory, this only works when the directory is empty)
+
 ```
 
 NOTE: `git commit` without `-m` when using this command, it will bring you to the text editor in terminal. Type I activate the INSERT MODE. after addming the comment in the first line. Type ESC to exit the INSERT MODE. type :wq to save the change and get out of the editor. 
