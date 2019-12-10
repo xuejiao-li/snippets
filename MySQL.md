@@ -38,7 +38,7 @@ DROP TABLE test;
 
 CREATE TABLE bankds (
     id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(255) NOT NULL -- MUST ALWAYS HAVE A VALUE
+    name VARCHAR(255) NOT NULL, -- MUST ALWAYS HAVE A VALUE
     PRIMARY KEY (id)
 
 );
@@ -151,6 +151,97 @@ FROM ((Orders
 INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
 INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
 ```
+
+**Other Functions in MySql**
+
+- `SELECT CURRENT_TIMESTAMP;`
+
+
+## This is some practice including for joining multiple tables and how to pull the most recent notes for the deal table 
+
+```SQL
+
+CREATE DATABASE deals;
+
+USE deals;
+
+CREATE TABLE users (
+	id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+
+);
+
+CREATE TABLE deals (
+	id INT NOT NULL AUTO_INCREMENT,
+    stock VARCHAR(255) NOT NULL,
+    customer VARCHAR (255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE comments (
+	id INT NOT NULL AUTO_INCREMENT,
+    date_posted DATETIME NOT NULL,
+    user_id INT NOT NULL,
+    deal_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (deal_id) REFERENCES deals(id)
+
+);
+
+ALTER TABLE comments
+ADD note TEXT;
+
+INSERT INTO users (name)
+VALUES ('Jade'), ('Colema');
+
+SELECT * FROM users;
+
+INSERT INTO deals (stock, customer)
+VALUES ('20001', 'Xuejiao'), ('30001', 'Meng');
+
+SELECT * FROM deals;
+
+INSERT INTO comments (date_posted, user_id, deal_id, note)
+VALUES (current_timestamp(), 2, 2, 'This is the SECOND note for second deal');
+
+
+SELECT * FROM comments;
+
+-- Join 3 tables together
+
+SELECT d.stock as stock, d.customer AS customer, u.name AS finance, c.note as comment, c.date_posted as posted_on, c.id
+FROM deals AS d
+LEFT JOIN comments AS c ON d.id = c.deal_id
+LEFT JOIN users as u ON u.id = c.user_id;
+
+SELECT MAX(c.id)
+FROM comments as c
+GROUP BY deal_id;
+
+
+SELECT * FROM
+(SELECT MAX(id) AS id FROM  comments GROUP BY deal_id) t1
+INNER JOIN 
+(SELECT id, date_posted, user_id, deal_id, note from comments) t2;
+
+-- How to join multiple tables and use the select statement as a table. How to show the most recent note for the deal table
+SELECT d.stock, d.customer, u.name AS Finance, t2.note AS Comments
+FROM deals as d
+LEFT JOIN 
+(SELECT id, date_posted, user_id, deal_id, note from comments) t2
+ON d.id = t2.deal_id
+INNER JOIN 
+(SELECT MAX(id) AS comment_id FROM  comments GROUP BY deal_id) t1
+ON t1.comment_id = t2.id
+LEFT JOIN
+users as u ON u.id = t2.user_id;
+
+
+```
+
+  
 
 
 
