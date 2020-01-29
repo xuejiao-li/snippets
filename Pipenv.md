@@ -3,6 +3,7 @@
 ## Pipenv
 
 **GENERAL**
+`pip --rm` to remove the associated virtual environment with the present of pipfile.
 
 `pip install pipenv` to install Pipenv
 
