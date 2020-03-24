@@ -114,6 +114,10 @@ Returning to an Old Revision. [More info](https://www.git-tower.com/learn/git/fa
 - `$ git reset --soft 0a5a7a6`
 >The reset command comes with a couple of options, one of the more interesting ones being the "--soft" flag. If you use it instead of --hard, Git will keep all the changes in those "undone" commits as local modifications:You'll be left with a couple of changes in your working copy and can then decide what to do with them.
 
+log
+
+- `git log` - to check the previouse commit with brief information. Press **q** to EXIT the log
+
 ## Vim Text Editor Commands
 ---
 
