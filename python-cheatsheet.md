@@ -111,7 +111,7 @@ $ git config --global credential.helper cache
 2. To change the defaul password cache timeout, enter the following:
 ```
 $ git config --global credential.helper 'cache --timeou=3600'
-# Set the cache to timeout after 1 hour (setting is in seconds) 
+# Set the cache to timeout after 1 hour (setting is in seconds)
 ```
 
 update & merge
@@ -155,3 +155,20 @@ Vim has two mode, one is **COMMAND MODE**, another is **INSERT MODE**
 
 **INSERT MODE**
 - Press **ESC** back to COMMAND MODE.
+
+
+## Nano Text Editor
+---
+- **CTRL + o** - save the file, prompt you to give a name to the file, and presee ENTER afterward.
+- **CTRL + x** - close the file, exit from the buffer.
+- `nano <filename>` - open an existing file.
+- **CTRL + R** - open another file with in the file you are editing. prompt you to enter the name of the file.
+- **ALT + >** & **ALT + <** - move between the buffers.
+- **ALT + A** & **ALT + ^** - Combination to select the regional data. After you select the text, and press **ALT + ^** then you COPY the text you selected. **CTRL +K** for CUT.
+- **CTRL + U** - to PASTE the copied text.
+- **ALT + \** - move to the top
+- **ALT + /** - move to the bottom.
+- **ALT + G** - go to specific line number.
+- **CTRL + W** - search.
+- **CTRL + I** - insert TAP
+- **CTRL + Y** & **CTRL + V** - Page Up & Page DOwn
