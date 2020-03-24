@@ -96,7 +96,23 @@ Pushing changes:
 >Note that origin is by no means a "magical" name, but just a standard convention. Although it makes sense to leave this convention untouched, you could perfectly rename it without losing any functionality.<br><br>
 >In the following example, the URL parameter to the "clone" command becomes the "origin" for the cloned local repository:
 
+Caching your GitHub password in Git
 
+if you'are cloning Github repositories using HTTPS, you can use a *credential helper* to tell Git to remember your GitHub username and password everytime it talkes to GitHub.
+
+If you clone GitHub repositories using SSH, then you authenticate using SSH keys instead of a username and password. For helper setting up an SSH connection, see [Generating an SSH Key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
+
+Turn on the credential helper so that Git will save your password in memory for some time. By default, Git will cache your password for 15 minutes.
+1. Interminal, enter the following:
+```
+$ git config --global credential.helper cache
+# Set git to use the credential memory cache
+```
+2. To change the defaul password cache timeout, enter the following:
+```
+$ git config --global credential.helper 'cache --timeou=3600'
+# Set the cache to timeout after 1 hour (setting is in seconds) 
+```
 
 update & merge
 
