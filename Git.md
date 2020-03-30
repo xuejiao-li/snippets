@@ -6,6 +6,8 @@
 
 [Git official website](https://git-scm.com)
 
+[Git Large File Storage](https://git-lfs.github.com/)
+
 ## Install
 
 - Use Mac or Windows installer downloaded from the Git official website
