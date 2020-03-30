@@ -29,6 +29,10 @@ $ rmdir foo
 # Remove the directory and everything in the directory
 $ rmdir /S foo
 
+# Display a text file content in CMD
+$ more foo.txt
+$ type foo.txt
+
 
 
 ```
