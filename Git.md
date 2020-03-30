@@ -6,7 +6,7 @@
 
 [Git official website](https://git-scm.com)
 
-[Git Large File Storage](https://git-lfs.github.com/)
+[Git Large File Storage](https://git-lfs.github.com/) `git lfs migrate import --include="*.csv"` [*convert large Git objects to LFS pointers* ](https://github.com/git-lfs/git-lfs/wiki/Tutorial)
 
 ## Install
 
