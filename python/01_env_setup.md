@@ -59,6 +59,10 @@ Activating the virtual environment.
 $ source venv/bin/active
 (venv) $ _
 
+# Windows
+
+venv\Scripts\activate
+
 ```
 
 Click [here](https://docs.python.org/3/using/cmdline.html#cmdoption-m) to find more info on `python3 -m <moduel-name>`
